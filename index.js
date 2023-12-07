@@ -9,7 +9,9 @@ const auth = require('./middleware/auth.middleware')
 const connection = require("./config/db")
 require("dotenv").config();
 
-
+app.use("/",(req,res)=>{
+  res.send("welcome to blog api")
+})
 app.use("/api", userRouter);
 
 app.use("/api",auth,blogRouter)
